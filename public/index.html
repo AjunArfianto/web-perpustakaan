@@ -10,22 +10,32 @@
     html {
       scroll-behavior: smooth;
     }
+    .mobile-item {
+    @apply flex items-center gap-3 text-gray-700 bg-gray-100/60 border border-gray-200 
+           py-3 px-4 rounded-xl shadow-sm hover:bg-gray-200 transition-all;
+  }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
 
 <!-- NAVBAR -->
-<header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-md z-50 transition-all">
+<header class="fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md shadow-md z-50">
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    
+    <!-- Logo -->
     <a href="landingpage.html" class="flex items-center gap-3 group">
       <div class="w-12 h-12 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 text-white flex items-center justify-center rounded-xl shadow-lg text-xl group-hover:scale-110 transition-transform">
         <i class="fas fa-book-open"></i>
       </div>
       <div>
-        <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Ajun Digital library</h1>
+        <h1 class="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          Ajun Digital Library
+        </h1>
         <p class="text-xs text-gray-500 -mt-1">Portal Baca & Belajar</p>
       </div>
     </a>
+
+    <!-- Desktop Menu -->
     <nav class="hidden md:flex items-center gap-6 font-medium">
       <a href="#koleksi" class="hover:text-blue-600 transition-colors flex items-center gap-1">
         <i class="fas fa-book text-sm"></i> Koleksi
@@ -39,17 +49,47 @@
       <a href="#acara" class="hover:text-blue-600 transition-colors flex items-center gap-1">
         <i class="fas fa-calendar-alt text-sm"></i> Acara
       </a>
-      <a href="login.html" class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all flex items-center gap-2">
+      <a href="login.html" 
+         class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all flex items-center gap-2">
         <i class="fas fa-sign-in-alt"></i> Login
       </a>
     </nav>
-    <button class="md:hidden text-gray-600 hover:text-blue-600">
+
+    <!-- Hamburger (Mobile Menu Button) -->
+    <button id="menuBtn" class="md:hidden text-gray-600 hover:text-blue-600">
       <i class="fas fa-bars text-xl"></i>
     </button>
+
+  </div>
+
+  <!-- ⭐ MOBILE MENU PREMIUM ⭐ -->
+  <div id="mobileMenu"
+       class="hidden flex-col gap-3 px-6 pb-5 pt-3 bg-white/80 backdrop-blur-xl border-t border-gray-200 md:hidden">
+
+    <a href="#koleksi" class="mobile-item">
+      <i class="fas fa-book w-5"></i> Koleksi
+    </a>
+
+    <a href="#fitur" class="mobile-item">
+      <i class="fas fa-star w-5"></i> Fitur
+    </a>
+
+    <a href="#layanan" class="mobile-item">
+      <i class="fas fa-concierge-bell w-5"></i> Layanan
+    </a>
+
+    <a href="#acara" class="mobile-item">
+      <i class="fas fa-calendar-alt w-5"></i> Acara
+    </a>
+
+    <a href="login.html" 
+   class="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow hover:scale-105 transition-all flex items-center gap-2 text-sm w-fit">
+  <i class="fas fa-sign-in-alt text-sm"></i> Login
+    </a>  
   </div>
 </header>
 
-<main class="pt-20">
+<main class="pt-20"></main>
 
 <!-- HERO SECTION -->
 <section class="relative bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white py-24 px-6 overflow-hidden">
@@ -940,6 +980,16 @@
       }, 100);
     });
   }
+  //Toogle
+   const btn = document.getElementById('menuBtn');
+  const menu = document.getElementById('mobileMenu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
+  });
+
+
 </script>
 
 </body>
