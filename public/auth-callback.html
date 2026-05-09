@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autentikasi - PerpustakaanKu</title>
+  <link href="./output.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 font-sans antialiased min-h-screen flex items-center justify-center p-6">
+
+  <div class="w-full max-w-md mx-auto">
+    <div class="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 border border-white/20 text-center">
+
+      <!-- Loading State -->
+      <div id="loadingState" class="space-y-6">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl shadow-lg mb-4">
+          <i class="fas fa-spinner fa-spin text-white text-3xl"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Memproses Login...</h2>
+        <p class="text-gray-600">Sedang menghubungkan akun Anda</p>
+        <div class="w-full bg-gray-200 rounded-full h-2">
+          <div class="bg-blue-600 h-2 rounded-full animate-pulse" style="width: 60%"></div>
+        </div>
+      </div>
+
+      <!-- Success State -->
+      <div id="successState" class="hidden space-y-6">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl shadow-lg mb-4">
+          <i class="fas fa-check-circle text-white text-3xl"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Login Berhasil!</h2>
+        <p class="text-gray-600">Selamat datang di PerpustakaanKu</p>
+        <button onclick="window.location.href='index.html'" class="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02]">
+          Lanjutkan ke Beranda
+        </button>
+      </div>
+
+      <!-- Error State -->
+      <div id="errorState" class="hidden space-y-6">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-red-600 to-pink-600 rounded-2xl shadow-lg mb-4">
+          <i class="fas fa-exclamation-triangle text-white text-3xl"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Login Gagal</h2>
+        <p class="text-gray-600">Terjadi kesalahan saat menghubungkan akun</p>
+        <button onclick="window.location.href='login.html'" class="w-full bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700 text-white font-bold py-3 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-[1.02]">
+          Kembali ke Login
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Handle OAuth callback
+    window.addEventListener('load', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const hashParams = new URLSearchParams(window.location.hash.substring(1));
+
+      // Check for OAuth response
+      const accessToken = hashParams.get('access_token') || urlParams.get('access_token');
+      const code = urlParams.get('code');
+      const error = urlParams.get('error') || hashParams.get('error');
+
+      setTimeout(() => {
+        if (error) {
+          // Handle error
+          document.getElementById('loadingState').classList.add('hidden');
+          document.getElementById('errorState').classList.remove('hidden');
+        } else if (accessToken || code) {
+          // Handle success - simulate user data storage
+          const userData = {
+            name: 'Demo User',
+            email: 'demo@example.com',
+            provider: urlParams.get('provider') || 'social'
+          };
+
+          // Store in localStorage (demo)
+          localStorage.setItem('isLoggedIn', 'true');
+          localStorage.setItem('currentUser', JSON.stringify(userData));
+
+          document.getElementById('loadingState').classList.add('hidden');
+          document.getElementById('successState').classList.remove('hidden');
+        } else {
+          // No OAuth response, redirect back to login
+          window.location.href = 'login.html';
+        }
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>
+

@@ -23,7 +23,7 @@
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
     
     <!-- Logo -->
-    <a href="landingpage.html" class="flex items-center gap-3 group">
+    <a href="./index.html" class="flex items-center gap-3 group back-home">
       <div class="w-12 h-12 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 text-white flex items-center justify-center rounded-xl shadow-lg text-xl group-hover:scale-110 transition-transform">
         <i class="fas fa-book-open"></i>
       </div>
@@ -37,6 +37,9 @@
 
     <!-- Desktop Menu -->
     <nav class="hidden md:flex items-center gap-6 font-medium">
+      <a href="dashboard.php" class="hover:text-blue-600 transition-colors flex items-center gap-1">
+        <i class="fas fa-tachometer-alt text-sm"></i> Dashboard
+      </a>
       <a href="#koleksi" class="hover:text-blue-600 transition-colors flex items-center gap-1">
         <i class="fas fa-book text-sm"></i> Koleksi
       </a>
@@ -49,10 +52,11 @@
       <a href="#acara" class="hover:text-blue-600 transition-colors flex items-center gap-1">
         <i class="fas fa-calendar-alt text-sm"></i> Acara
       </a>
-      <a href="login.html" 
-         class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all flex items-center gap-2">
-        <i class="fas fa-sign-in-alt"></i> Login
-      </a>
+      <div id="authActions" class="flex items-center gap-4">
+        <a href="login.html" id="loginLink" class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg shadow-md hover:shadow-lg hover:scale-105 transition-all flex items-center gap-2">
+          <i class="fas fa-sign-in-alt"></i> Login
+        </a>
+      </div>
     </nav>
 
     <!-- Hamburger (Mobile Menu Button) -->
@@ -65,6 +69,10 @@
   <!-- ⭐ MOBILE MENU PREMIUM ⭐ -->
   <div id="mobileMenu"
        class="hidden flex-col gap-3 px-6 pb-5 pt-3 bg-white/80 backdrop-blur-xl border-t border-gray-200 md:hidden">
+
+    <a href="dashboard.php" class="mobile-item">
+      <i class="fas fa-tachometer-alt w-5"></i> Dashboard
+    </a>
 
     <a href="#koleksi" class="mobile-item">
       <i class="fas fa-book w-5"></i> Koleksi
@@ -114,6 +122,10 @@
       <div class="flex flex-wrap items-center gap-4">
         <a href="#koleksi" class="px-8 py-4 bg-white text-blue-700 font-bold rounded-xl shadow-xl hover:scale-105 transition-transform flex items-center gap-2">
           <i class="fas fa-search"></i> Jelajahi Koleksi
+        </a>
+        <a href="dashboard.php" class="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-xl shadow-xl hover:scale-105 transition-transform flex items-center gap-2">
+          <i class="fas fa-tachometer-alt"></i> Dashboard Admin
+          <span class="text-xs bg-white/20 px-2 py-1 rounded-full">Admin Only</span>
         </a>
         <a href="register.html" class="px-8 py-4 bg-transparent border-2 border-white font-bold rounded-xl hover:bg-white hover:text-blue-700 transition-all flex items-center gap-2">
           <i class="fas fa-user-plus"></i> Daftar Sekarang
@@ -357,19 +369,19 @@
     <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
   </div>
   
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-16">
+  <div class="max-w-5xl mx-auto relative z-10 px-6 sm:px-8">
+    <div class="text-center mb-16 mx-4">
       <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
         <i class="fas fa-gem text-yellow-400"></i> Fitur Premium
       </div>
-      <h3 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+      <h3 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent whitespace-normal break-words leading-tight px-6 mx-2">
         Kenapa Pilih AjunLib?
       </h3>
       <p class="text-amber-300 text-lg max-w-2xl mx-auto">Nikmati fitur canggih dan teknologi terdepan untuk pengalaman membaca yang tak terlupakan</p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="group bg-white/20 backdrop-blur-lg border-2 border-white/30 rounded-2xl p-8 shadow-2xl hover:bg-white/30 hover:border-white/50 hover:shadow-blue-500/50 transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+      <div class="group bg-white/20 backdrop-blur-lg border-2 border-white/30 rounded-2xl p-8 shadow-2xl hover:bg-white/30 hover:border-white/50 hover:shadow-blue-500/50 transition-all duration-500 hover:scale-[1.02] overflow-hidden">
         <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center text-2xl text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
           <i class="fas fa-cloud-download-alt"></i>
         </div>
@@ -381,7 +393,7 @@
         </div>
       </div>
 
-      <div class="group bg-white/20 backdrop-blur-lg border-2 border-white/30 rounded-2xl p-8 shadow-2xl hover:bg-white/30 hover:border-white/50 hover:shadow-indigo-500/50 transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+      <div class="group bg-white/20 backdrop-blur-lg border-2 border-white/30 rounded-2xl p-8 shadow-2xl hover:bg-white/30 hover:border-white/50 hover:shadow-indigo-500/50 transition-all duration-500 hover:scale-[1.02] overflow-hidden">
         <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-2xl text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
           <i class="fas fa-headphones-alt"></i>
         </div>
@@ -393,7 +405,7 @@
         </div>
       </div>
 
-      <div class="group bg-white/20 backdrop-blur-lg border-2 border-white/30 rounded-2xl p-8 shadow-2xl hover:bg-white/30 hover:border-white/50 hover:shadow-green-500/50 transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+      <div class="group bg-white/20 backdrop-blur-lg border-2 border-white/30 rounded-2xl p-8 shadow-2xl hover:bg-white/30 hover:border-white/50 hover:shadow-green-500/50 transition-all duration-500 hover:scale-[1.02] overflow-hidden">
         <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center text-2xl text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
           <i class="fas fa-chart-line"></i>
         </div>
@@ -405,7 +417,7 @@
         </div>
       </div>
 
-      <div class="group bg-white/20 backdrop-blur-lg border-2 border-white/30 rounded-2xl p-8 shadow-2xl hover:bg-white/30 hover:border-white/50 hover:shadow-purple-500/50 transition-all duration-300 hover:-translate-y-2">
+      <div class="group bg-white/20 backdrop-blur-lg border-2 border-white/30 rounded-2xl p-8 shadow-2xl hover:bg-white/30 hover:border-white/50 hover:shadow-purple-500/50 transition-all duration-500 hover:scale-[1.02]">
         <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-2xl text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
           <i class="fas fa-search"></i>
         </div>
@@ -429,7 +441,7 @@
         </div>
       </div>
 
-      <div class="group bg-white/20 backdrop-blur-lg border-2 border-white/30 rounded-2xl p-8 shadow-2xl hover:bg-white/30 hover:border-white/50 hover:shadow-orange-500/50 transition-all duration-300 hover:-translate-y-2">
+      <div class="group bg-white/20 backdrop-blur-lg border-2 border-white/30 rounded-2xl p-8 shadow-2xl hover:bg-white/30 hover:border-white/50 hover:shadow-orange-500/50 transition-all duration-500 hover:scale-[1.02]">
         <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-yellow-600 rounded-xl flex items-center justify-center text-2xl text-white mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
           <i class="fas fa-users"></i>
         </div>
@@ -451,19 +463,19 @@
     <div class="absolute bottom-10 left-10 w-72 h-72 bg-teal-200 rounded-full blur-3xl"></div>
   </div>
   
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-16">
+  <div class="max-w-5xl mx-auto relative z-10 px-6 sm:px-8">
+    <div class="text-center mb-16 mx-4">
       <div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-6 py-2 rounded-full text-sm font-semibold mb-6">
         <i class="fas fa-hands-helping"></i> Layanan Kami
       </div>
-      <h3 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+      <h3 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent whitespace-normal break-words leading-tight px-6 mx-2">
         Layanan Perpustakaan
       </h3>
       <p class="text-gray-600 text-lg max-w-2xl mx-auto">Berbagai layanan lengkap untuk mendukung kebutuhan belajar, riset, dan pengembangan diri Anda</p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="group bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:border-emerald-400 transition-all duration-300 hover:-translate-y-2">
+      <div class="group bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:border-emerald-400 transition-all duration-500 hover:scale-[1.02]">
         <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center text-3xl text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
           <i class="fas fa-book"></i>
         </div>
@@ -481,7 +493,7 @@
         </ul>
       </div>
 
-      <div class="group bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:border-teal-400 transition-all duration-300 hover:-translate-y-2">
+      <div class="group bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:border-teal-400 transition-all duration-500 hover:scale-[1.02]">
         <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center text-3xl text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
           <i class="fas fa-desktop"></i>
         </div>
@@ -499,7 +511,7 @@
         </ul>
       </div>
 
-      <div class="group bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:border-cyan-400 transition-all duration-300 hover:-translate-y-2">
+      <div class="group bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:border-cyan-400 transition-all duration-500 hover:scale-[1.02]">
         <div class="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center text-3xl text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
           <i class="fas fa-users"></i>
         </div>
@@ -517,7 +529,7 @@
         </ul>
       </div>
 
-      <div class="group bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:border-blue-400 transition-all duration-300 hover:-translate-y-2">
+      <div class="group bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:border-blue-400 transition-all duration-500 hover:scale-[1.02]">
         <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center text-3xl text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
           <i class="fas fa-print"></i>
         </div>
@@ -535,7 +547,7 @@
         </ul>
       </div>
 
-      <div class="group bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:border-indigo-400 transition-all duration-300 hover:-translate-y-2">
+      <div class="group bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:border-indigo-400 transition-all duration-500 hover:scale-[1.02]">
         <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-3xl text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
           <i class="fas fa-user-graduate"></i>
         </div>
@@ -553,7 +565,7 @@
         </ul>
       </div>
 
-      <div class="group bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:border-purple-400 transition-all duration-300 hover:-translate-y-2">
+      <div class="group bg-white rounded-2xl p-8 shadow-xl border-2 border-gray-200 hover:shadow-2xl hover:border-purple-400 transition-all duration-500 hover:scale-[1.02]">
         <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center text-3xl text-white mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
           <i class="fas fa-wifi"></i>
         </div>
@@ -580,17 +592,17 @@
     <div class="absolute top-10 right-20 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
     <div class="absolute bottom-10 left-20 w-72 h-72 bg-pink-500 rounded-full blur-3xl"></div>
   </div>
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-16">
+  <div class="max-w-5xl mx-auto relative z-10 px-6 sm:px-8">
+    <div class="text-center mb-16 mx-4">
       <div class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-pink-100 text-purple-600 px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-md">
         <i class="fas fa-calendar-check text-pink-600"></i> Event & Kegiatan
       </div>
-      <h3 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Acara & Kegiatan</h3>
+      <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent whitespace-normal break-words leading-tight px-6 mx-2">Acara & Kegiatan</h3>
       <p class="text-gray-600 text-lg max-w-2xl mx-auto">Ikuti event menarik setiap minggu untuk meningkatkan pengetahuan, networking, dan pengembangan diri</p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 border-purple-500 hover:-translate-y-3 hover:scale-[1.02]">
+      <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 border-purple-500 hover:scale-[1.05]">
         <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all">
           <i class="fas fa-book-reader"></i>
         </div>
@@ -611,7 +623,7 @@
         </div>
       </div>
 
-      <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 border-blue-500 hover:-translate-y-3 hover:scale-[1.02]">
+      <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 border-blue-500 hover:scale-[1.05]">
         <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all">
           <i class="fas fa-microscope"></i>
         </div>
@@ -632,7 +644,7 @@
         </div>
       </div>
 
-      <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 border-green-500 hover:-translate-y-3 hover:scale-[1.02]">
+      <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 border-green-500 hover:scale-[1.05]">
         <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all">
           <i class="fas fa-pen-fancy"></i>
         </div>
@@ -653,7 +665,7 @@
         </div>
       </div>
 
-      <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 border-orange-500 hover:-translate-y-3 hover:scale-[1.02]">
+      <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 border-orange-500 hover:scale-[1.05]">
         <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all">
           <i class="fas fa-laptop-code"></i>
         </div>
@@ -674,7 +686,7 @@
         </div>
       </div>
 
-      <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 border-pink-500 hover:-translate-y-3 hover:scale-[1.02]">
+      <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 border-pink-500 hover:scale-[1.05]">
         <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all">
           <i class="fas fa-child"></i>
         </div>
@@ -695,7 +707,7 @@
         </div>
       </div>
 
-      <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border-t-4 border-teal-500 hover:-translate-y-3 hover:scale-[1.02]">
+      <div class="group bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border-t-4 border-teal-500 hover:scale-[1.05]">
         <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-teal-600 text-white rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all">
           <i class="fas fa-certificate"></i>
         </div>
@@ -725,17 +737,17 @@
     <div class="absolute top-10 left-10 w-72 h-72 bg-purple-500 rounded-full blur-3xl"></div>
     <div class="absolute bottom-10 right-10 w-96 h-96 bg-pink-500 rounded-full blur-3xl"></div>
   </div>
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-16">
+  <div class="max-w-5xl mx-auto relative z-10 px-6 sm:px-8">
+    <div class="text-center mb-16 mx-4">
       <div class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-100 to-purple-100 text-pink-600 px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-md">
         <i class="fas fa-heart text-red-500"></i> Kata Mereka
       </div>
-      <h3 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Apa Kata Pengguna?</h3>
+      <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent whitespace-normal break-words leading-tight px-6 mx-2">Apa Kata Pengguna?</h3>
       <p class="text-gray-600 text-lg max-w-2xl mx-auto">Dengarkan pengalaman nyata dari ribuan anggota yang telah merasakan manfaat AjunLib</p>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="group bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-3 hover:scale-[1.02]">
+      <div class="group bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:scale-[1.02]">
         <div class="flex items-center gap-4 mb-6">
           <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-2xl text-white font-bold shadow-lg">
             AS
@@ -755,7 +767,7 @@
         </div>
       </div>
 
-      <div class="group bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-3 hover:scale-[1.02]">
+      <div class="group bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:scale-[1.02]">
         <div class="flex items-center gap-4 mb-6">
           <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center text-2xl text-white font-bold shadow-lg">
             DR
@@ -775,7 +787,7 @@
         </div>
       </div>
 
-      <div class="group bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:-translate-y-3 hover:scale-[1.02]">
+      <div class="group bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:scale-[1.02]">
         <div class="flex items-center gap-4 mb-6">
           <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-2xl text-white font-bold shadow-lg">
             BP
@@ -827,7 +839,7 @@
             <i class="fas fa-book-open"></i>
           </div>
           <div>
-            <h4 class="font-bold text-lg">PerpustakaanKu</h4>
+            <h4 class="font-bold text-lg">Ajun Digital Library</h4>
             <p class="text-xs opacity-80">Portal Baca & Belajar</p>
           </div>
         </div>
@@ -855,7 +867,7 @@
         <ul class="space-y-3 text-sm opacity-80">
           <li class="flex items-center gap-2">
             <i class="fas fa-envelope text-yellow-300"></i>
-            <span>info@perpustakaanku.id</span>
+            <span>@ajundigitallibrarys@gmail.com</span>
           </li>
           <li class="flex items-center gap-2">
             <i class="fas fa-phone text-yellow-300"></i>
@@ -880,7 +892,7 @@
       </div>
     </div>
     <div class="border-t border-white/20 pt-8 text-center text-sm opacity-80">
-      <p>© 2025 PerpustakaanKu — Semua Hak Dilindungi | Dibuat oleh Ajun Arfianto</p>
+      <p>© 2025 Ajun Digital Library — Semua Hak Dilindungi | Dibuat oleh Ajun Arfianto</p>
     </div>
   </div>
 </footer>
@@ -955,7 +967,7 @@
         setTimeout(() => {
           entry.target.style.opacity = '1';
           entry.target.style.transform = 'translateY(0)';
-        }, index * 100);
+        }, index * 50); // Reduced delay from 100ms to 50ms
       }
     });
   }, { threshold: 0.1 });
@@ -963,8 +975,8 @@
   // Observe all feature, service, and event cards
   document.querySelectorAll('#fitur .group, #layanan .group, #acara .group').forEach((card, index) => {
     card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    card.style.transform = 'translateY(15px)'; // Reduced from 30px to 15px
+    card.style.transition = 'opacity 0.8s ease, transform 0.8s ease'; // Increased duration for smoother effect
     cardObserver.observe(card);
   });
 
@@ -973,8 +985,8 @@
   if (testimoniSection) {
     testimoniSection.querySelectorAll('.group').forEach((card, index) => {
       card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      card.style.transform = 'translateY(15px)'; // Reduced from 30px to 15px
+      card.style.transition = 'opacity 0.8s ease, transform 0.8s ease'; // Increased duration for smoother effect
       setTimeout(() => {
         cardObserver.observe(card);
       }, 100);
@@ -991,6 +1003,7 @@
 
 
 </script>
+
 
 </body>
 </html>
